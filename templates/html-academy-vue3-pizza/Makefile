@@ -1,5 +1,9 @@
 # Makefile for local development
 
+rebuild_backend:
+	docker-compose down -v
+	docker-compose run backend npm run rebuild
+
 start_project:
 	docker-compose down -v
 	docker-compose up --build
@@ -9,9 +13,19 @@ run_server:
 	docker-compose up backend --build
 
 run_tests:
-	cd src/frontend; echo "...Starting frontend tests" && \
+	cd frontend; echo "...Starting frontend tests" && \
 	npm run test:unit
 
-run_server:
-	docker-compose down -v
-	docker-compose up backend
+install_backend_dependencies:
+	cd backend; echo "...Installing server dependencies" && \
+	npm install
+
+install_frontend_dependencies:
+	cd frontend; echo "...Installing client dependencies" && \
+	npm install
+
+install_template_dependencies:
+	cd template; echo "...Installing template dependencies" && \
+	npm install
+
+install_dependencies: install_backend_dependencies install_frontend_dependencies install_template_dependencies

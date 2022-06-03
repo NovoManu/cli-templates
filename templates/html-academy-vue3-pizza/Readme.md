@@ -1,85 +1,60 @@
-# Личный проект «{{projectTitle}}»
-
-* Студент: [{{userName}}]({{userProfile}}).
-
----
-
-_Не удаляйте и не изменяйте папки и файлы:_
-_`.editorconfig`, `.gitattributes`, `.gitignore`._
-
----
-
-### Памятка
-
-#### 1. Зарегистрируйтесь на Гитхабе
-
-Если у вас ещё нет аккаунта на [github.com](https://github.com/join), скорее зарегистрируйтесь.
-
-#### 2. Создайте форк
-
-Откройте репозиторий и нажмите кнопку «Fork» в правом верхнем углу. Репозиторий из Академии будет скопирован в ваш аккаунт.
-
-<img width="769" alt="Press 'Fork'" src="https://cloud.githubusercontent.com/assets/259739/20264045/a1ddbf40-aa7a-11e6-9a1a-724a1c0123c8.png">
-
-Получится вот так:
-
-<img width="769" alt="Forked" src="https://cloud.githubusercontent.com/assets/259739/20264122/f63219a6-aa7a-11e6-945a-89818fc7c014.png">
-
-#### 3. Клонируйте репозиторий на свой компьютер
-
-Будьте внимательны: нужно клонировать свой репозиторий (форк), а не репозиторий Академии. Также обратите внимание, что клонировать репозиторий нужно через SSH, а не через HTTPS. Нажмите зелёную кнопку в правой части экрана, чтобы скопировать SSH-адрес вашего репозитория:
-
-<img width="769" alt="SSH" src="https://cloud.githubusercontent.com/assets/259739/20264180/42704126-aa7b-11e6-9ab4-73372b812a53.png">
-
-Клонировать репозиторий можно так:
-
-```
-git clone SSH-адрес_вашего_форка
-```
-
-Команда клонирует репозиторий на ваш компьютер и подготовит всё необходимое для старта работы.
-
-#### 4. Начинайте обучение
-
----
-
-<a href="https://htmlacademy.ru/intensive/vue"><img align="left" width="50" height="50" title="HTML Academy" src="https://up.htmlacademy.ru/static/img/intensive/javascript/logo-for-github-2.png"></a>
-
-Репозиторий создан для обучения на профессиональном онлайн‑курсе «[Vue.js для опытных разработчиков](https://htmlacademy.ru/intensive/vue)» от [HTML Academy](https://htmlacademy.ru).
+# HTML Academy. Личный проект «Pizza»
 
 ## Начальные требования
+- Docker
+- Docker-compose
+- NodeJS >= 16
 
-* Docker
-* Docker-compose
-* NodeJS 16+
-* Pre commit (optional)
+## Docker установка
+https://docs.docker.com/get-docker/
 
-## Docker документация и установка
+https://dker.ru/docs/ (рус)
 
-* <https://docs.docker.com/get-docker/>
-* <https://dker.ru/docs/> (рус)
+## Docker-compose установка
+https://docs.docker.com/compose/install/
 
-## Docker-compose документация и установка
+## Node js установка
+Мы рекоммендуем использовать Node Version Manager для удобного управления версиями node.js
 
-<https://docs.docker.com/compose/install/>
+https://github.com/nvm-sh/nvm
 
-## Node js документация и установка
+Либо можно установить node.js отдельно
 
-<https://nodejs.org/en/download/>
+https://nodejs.org/en/download/
 
-## Pre-commit документация и установка
+## Работа с помощью GNU Make
+Для удобной работой с проектом мы используем GNU Make.
 
-* Установить пакет локально, [следуя инструкциям](https://pre-commit.com/#installation)
-* Выполнить команду `pre-commit install`
-* После этого каждый коммит будет проверять правила линтинга и править ошибки
+https://www.gnu.org/software/make/
 
-## Frontend установка
+По-умолчанию, GNU Make уже предустановлен на Unix операционных системах.
+Чтобы проверить установлени ли GNU Make на вашем компьютере выполните команду в терминале
 
-* Перейти в директорию
+```
+make --version 
+```
 
-`cd src/frontend`
+В случае отстутствия GNU Make, мы рекоммендуем установить его.
 
-* Установить зависимости
+В makefile доступны следующие команды
+
+Установить зависимости для проекта
+
+`$ make install_dependencies`
+
+Запустить проект
+
+`$ make start_project`
+
+## Работа без GNU Make
+
+### Frontend установка
+
+- Перейдите в директорию (выполнить из корня приложения)
+
+`cd frontend`
+
+- Установите зависимости
 
 `$ npm install`
 
@@ -92,27 +67,77 @@ npm run test:unit - запуск юнит тестов
 npm run lint - запуск линтера
 ```
 
-## Backend установка
+### Backend установка
 
-* Перейти в директорию:
+- Перейдите в директорию (выполнить из корня приложения)
 
-`cd src/backend`
+`cd backend`
 
-* Установить зависимости:
+- Установите зависимости
 
 `$ npm install`
 
-## Docker установка проекта
+- Запуск сервера (для запуска необходима работающая база данных на порте :5432)
 
-* Выполнить команду:
+`$ npm start`
+
+### Установка шаблона
+
+- Перейдите в директорию (выполнить из корня приложения)
+
+`cd template`
+
+- Установите зависимости
+
+`$ npm install`
+
+- Запуск шаблонов
+
+`$ npm start`
+
+### Docker настройка
+
+- Сборка проекта
 
 `$ docker-compose build`
 
-* Запустить проект с помощью команды:
+### Запуск проекта с Docker
 
-`$ make start_project`
+`$ docker-compose down -v`
 
-* Сервер будет запущен по адресу `localhost:3000`, а клиент по адресу `localhost:8080`
+`$ docker-compose up`
+
+Сервер будет доступен по адресу `localhost:3000`
+
+Клиент будет доступен по адресу `localhost:8080`
+
+### Запуск проекта без Docker
+
+| Внимание: требуется ручной запуск базы данных |
+|-----------------------------------------------|
+
+- Запуск базы данных
+
+Запустите PostgreSQL базу данных
+
+Обновите конфигурацию подключения базы данных для сервера в файле `backend/src/datasources/database.datasource.ts`
+
+- Запуск сервера (выполнить из корня приложения)
+
+```
+cd backend && npm start
+```
+
+- Запуск клиента (выполнить из корня приложения)
+
+```
+cd frontend && npm run dev
+```
+
+Сервер будет доспупен по адресу `localhost:3000`
+
+Клиент будет доспупен по адресу `localhost:8080`
+
 
 ## Вход для авторизированного пользователя
 
