@@ -34,5 +34,4 @@ services:
       - '8080:8080'
     volumes:
       - ./frontend:/frontend
-      - ./src/frontend:/frontend
       - /frontend/node_modules

@@ -160,10 +160,18 @@ http://localhost:3000/explorer/
 
 ## Запуск и просмотр готовой верстки проекта
 
-Перейдите в директорию:
+### С помощью GNU Make
+
+`$ make install_template_dependencies`
+
+`$ make run_template`
+
+### Без GNU Make
+
+Перейдите в директорию template:
 
 ```
-template/
+cd template 
 ```
 
 Установите зависимости, выполнив команду:
