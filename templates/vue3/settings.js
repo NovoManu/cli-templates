@@ -3,9 +3,12 @@ const confirm = require('@inquirer/confirm')
 const getInstallationSettings =
   async () => {
     const settings = {
-      vitest: false
+      templates: {
+				base: true,
+	      vitest: false
+      }
     }
-    settings.vitest = await confirm({ message: 'Do you want to include vitest?' })
+    settings.templates.vitest = await confirm({ message: 'Do you want to include vitest?' })
     return settings
   }
 	
