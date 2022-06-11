@@ -5,7 +5,7 @@ const getInstallationSettings =
     const settings = {
       vitest: false
     }
-    settings.jest = await confirm({ message: 'Do you want to include vitest?' })
+    settings.vitest = await confirm({ message: 'Do you want to include vitest?' })
     return settings
   }
 	
