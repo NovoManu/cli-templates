@@ -25,6 +25,10 @@ const getInstallationSettings =
 	  settings.devPort = Number(devPort)
     settings.templates.vitest = await confirm({ message: 'Do you want to include vitest?' })
     settings.templates.router = await confirm({ message: 'Do you want to include vue router?' })
+	  if (settings.templates.router) {
+			settings.routerImport = 'import router from "./router";'
+		  settings.routerUse = 'app.use(router);'
+	  }
     return settings
   }
 	
