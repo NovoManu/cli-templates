@@ -1,7 +1,5 @@
-const confirm = require('@inquirer/confirm')
-
 const getInstallationSettings =
-  async () => {
+  async ({ confirm }) => {
     const settings = {
       templates: {
 				base: true,
