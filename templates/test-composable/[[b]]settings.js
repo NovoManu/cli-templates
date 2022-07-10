@@ -2,7 +2,7 @@ const getInstallationSettings =
   async ({ confirm, input }) => {
     const settings = {
 			devPort: 8080,
-      templates: {
+      modules: {
 				base: true,
 	      vitest: false,
 	      router: false
@@ -23,9 +23,9 @@ const getInstallationSettings =
 	      })
 	  })
 	  settings.devPort = Number(devPort)
-    settings.templates.vitest = await confirm({ message: 'Do you want to include vitest?' })
-    settings.templates.router = await confirm({ message: 'Do you want to include vue router?' })
-	  if (settings.templates.router) {
+    settings.modules.vitest = await confirm({ message: 'Do you want to include vitest?' })
+    settings.modules.router = await confirm({ message: 'Do you want to include vue router?' })
+	  if (settings.modules.router) {
 			settings.routerImport = 'import router from "./router";'
 		  settings.routerUse = 'app.use(router);'
 	  }
