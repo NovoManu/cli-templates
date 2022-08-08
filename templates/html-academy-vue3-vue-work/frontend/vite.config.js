@@ -13,6 +13,6 @@ export default defineConfig({
   },
   server: {
     host: true,
-    port: {{devPort}}
+    port: 8080
   }
 })
